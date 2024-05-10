@@ -1,9 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Animal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modificar Animal</h1>
+        <form id="animalForm">
+            <label for="animalName">Nombre del Animal:</label>
+            <input type="text" id="animalName" name="animalName" required>
+            <label for="animalSpecies">Especie:</label>
+            <select id="animalSpecies" name="animalSpecies">
+                <option value="Perro">Perro</option>
+                <option value="Gato">Gato</option>
+                <option value="Pájaro">Pájaro</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <label for="animalGender">Sexo:</label>
+            <select id="animalGender" name="animalGender">
+                <option value="Macho">Macho</option>
+                <option value="Hembra">Hembra</option>
+            </select>
+            <label for="animalCastrated">Castrado:</label>
+            <select id="animalCastrated" name="animalCastrated">
+                <option value="Si">Sí</option>
+                <option value="No">No</option>
+            </select>
+            <input type="submit" value="Guardar Cambios">
+        </form>
+    </div>
+</body>
 </html>
