@@ -1,3 +1,2 @@
 <?php
-$txt = "PHP";
-echo "I love $txt!";
+echo ('Conexion andando Listar');
