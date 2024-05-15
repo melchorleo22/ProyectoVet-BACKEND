@@ -1,9 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body></body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modificar Animal</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Modificar Animal</h1>
+        <form id="animalForm" action="../crud/modificarAnimal.php" method="POST">
+            <label for="animalID">ID del Animal a modificar:</label>
+            <input type="text" id="animalID" name="animalID" required>
+            <label for="animalName">Nuevo nombre:</label>
+            <input type="text" id="animalName" name="animalName" required>
+            <label for="animalSpecies">Especie:</label>
+            <input type="text" id="animalSpecies" name="animalSpecies" required>
+            <label for="animalGender">Sexo:</label>
+            <input type="text" id="animalGender" name="animalGender" required>
+            <label for="animalCastrated">Castrado:</label>
+            <input type="text" id="animalCastrated" name="animalCastrated" required>
+            <label for="animalImage">Imagen del Animal:</label>
+            <input type="file" id="animalImage" name="animalImage">
+            <button type="submit">Modificar</button>
+        </form>
+    </div>
+</body>
 </html>
