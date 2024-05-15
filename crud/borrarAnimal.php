@@ -5,6 +5,7 @@ $username = "root";
 $password = "";
 $dbname = "veterinaria_db";
 
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar la conexión
