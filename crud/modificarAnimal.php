@@ -10,6 +10,8 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Verificar la conexión
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
+} else {
+    echo "Conexión exitosa";
 }
 
 function modificarAnimal($id_animal) {
@@ -22,10 +24,10 @@ function modificarAnimal($id_animal) {
     $castrado = $_POST['animalCastrated'];
 
     // Obtener el nombre de la imagen si se ha subido?
-    $imagen = isset($_FILES['animalImage']['name']) ? $_FILES['animalImage']['name'] : '';
+    //$imagen = isset($_FILES['animalImage']['name']) ? $_FILES['animalImage']['name'] : '';
 
     // Consulta SQL para modificar el animal
-    $update = "UPDATE animal SET nombre_animal='$nombre', especie='$especie', sexo='$sexo', castrado='$castrado', imagen='$imagen' WHERE id_animal = $id_animal";
+    $update = "UPDATE animal SET nombre_animal='$nombre', especie='$especie', sexo='$sexo', castrado='$castrado', img_animal='$imagen' WHERE id_animal = $id_animal";
     
     $resultado = $conn->query($update);
     if ($resultado === TRUE) {
