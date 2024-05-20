@@ -18,10 +18,10 @@ function modificarAnimal($id_animal) {
     global $conn;
 
     // Obtener los datos del formulario
-    $nombre = $_POST['animalName'];
-    $especie = $_POST['animalSpecies'];
-    $sexo = $_POST['animalGender'];
-    $castrado = $_POST['animalCastrated'];
+    $nombre = $_POST['nuevoNombre'];
+    $especie = $_POST['nuevoEspecie'];
+    $sexo = $_POST['nuevoSexo'];
+    $castrado = $_POST['nuevoCastrado'];
 
     // Obtener el nombre de la imagen si se ha subido?
     //$imagen = isset($_FILES['animalImage']['name']) ? $_FILES['animalImage']['name'] : '';

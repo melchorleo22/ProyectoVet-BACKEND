@@ -4,6 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modificar Animal</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#animalID").change(function(){
+                var animalID = $(this).val();
+                $.ajax({
+                    type: "POST",
+                    url: "../crud/buscarAnimalPorId.php",
+                    data: { animalID: animalID },
+                    success: function(response){
+                        var data = JSON.parse(response);
+                        // me traigo los valores anteriores de la bd y los escribo en los campos html
+                        $("#animalName").val(data.nombre_animal);
+                        $("#animalSpecies").val(data.especie);
+                        $("#animalGender").val(data.sexo);
+                        $("#animalCastrated").val(data.castrado);
+                        $("#animalImage").val(data.img_animal);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="container">
@@ -11,7 +33,8 @@
         <form id="animalForm" action="../crud/modificarAnimal.php" method="POST" enctype="multipart/form-data">
             <label for="animalID">ID del Animal a modificar:</label>
             <input type="text" id="animalID" name="animalID" required>
-            <label for="animalName">Nuevo nombre:</label>
+            <h1>Datos Anteriores</h1>
+            <label for="animalName">Nombre:</label>
             <input type="text" id="animalName" name="animalName" required>
             <label for="animalSpecies">Especie:</label>
             <input type="text" id="animalSpecies" name="animalSpecies" required>
@@ -21,6 +44,19 @@
             <input type="text" id="animalCastrated" name="animalCastrated" required>
             <label for="animalImage">Imagen del Animal:</label>
             <input type="file" id="animalImage" name="animalImage">
+
+            <h1>Datos Nuevos</h1>
+            <label for="nuevoNombre">Nombre:</label>
+            <input type="text" id="nuevoNombre" name="nuevoNombre" required>
+            <label for="nuevoEspecie">Especie:</label>
+            <input type="text" id="nuevoEspecie" name="nuevoEspecie" required>
+            <label for="nuevoSexo">Sexo:</label>
+            <input type="text" id="nuevoSexo" name="nuevoSexo" required>
+            <label for="nuevoCastrado">Castrado:</label>
+            <input type="text" id="nuevoCastrado" name="nuevoCastrado" required>
+            <label for="nuevoImagen">Imagen del Animal:</label>
+            <input type="file" id="nuevoImagen" name="nuevoImagen">
+
             <button type="submit">Modificar</button>
         </form>
     </div>
