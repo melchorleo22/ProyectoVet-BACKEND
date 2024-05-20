@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Animales por Especie y Sexo</title>
+</head>
+<body>
+    <h1>Seleccionar Especie y Sexo de Animal</h1>
+    <form action="../crud/listarAnimalFiltrado.php" method="GET">
+        <label for="especie">Especie:</label>
+        <select id="especie" required>
+            <option value="canino">Canino</option>
+            <option value="felino">Felino</option>
+        </select>
+        <br>
+        <label for="sexo">Sexo:</label>
+        <select id="sexo"required>
+            <option value="macho">Macho</option>
+            <option value="hembra">Hembra</option>
+        </select>
+        <br>
+        <button type="submit">Buscar</button>
+    </form>
+</body>
+</html>
