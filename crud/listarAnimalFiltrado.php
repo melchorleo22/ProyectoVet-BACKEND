@@ -31,7 +31,8 @@ if ($resultado->num_rows > 0) {
     echo "<h1>Listado de Animales - " . ucfirst($especie) . "s (" . ucfirst($sexo) . "s)</h1>";
     // Mostrar los datos de los animales
     while ($row = $resultado->fetch_assoc()) {
-        echo "Id: " . $row["id_animal"] . " - Nombre: " . $row["nombre_animal"] . " - Sexo: " . $row["sexo"] . " - Imagen: <img src='../img/" . $row["img_animal"] . "' width='10%'><br>";
+        $imgPath = '../img/' . $row["img_animal"]; // Ruta completa a la imagen
+        echo "Id: " . $row["id_animal"] . " - Nombre: " . $row["nombre_animal"] . " - Sexo: " . $row["sexo"] . " - Imagen: <img src='" . $imgPath . "' width='10%'><br>";
     }
 } else {
     echo "No se encontraron animales de la especie y sexo seleccionados.";
