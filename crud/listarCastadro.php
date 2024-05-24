@@ -22,6 +22,7 @@ function listarAnimalesCastrados($conn) {
             FROM animal
             LEFT JOIN dueno ON animal.id_dueno = dueno.id_dueno
             WHERE animal.castrado = 1";
+
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
