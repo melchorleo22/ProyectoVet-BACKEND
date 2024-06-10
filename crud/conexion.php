@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost"; // Nombre del servidor de la base de datos
 $username = "root"; // Nombre de usuario de la base de datos
-$password = ""; // Contraseña de la base de datos
+$password = "root"; // Contraseña de la base de datos
 $dbname = "veterinaria_db"; // Nombre de la base de datos
 
 // Crear conexión
