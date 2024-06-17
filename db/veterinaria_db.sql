@@ -313,6 +313,34 @@ ALTER TABLE `vacuna`
   ADD CONSTRAINT `vacuna_fk_listado_vacuna` FOREIGN KEY (`id_vacuna`) REFERENCES `listado_vacuna` (`id_vacuna`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
 
+-- Actualizaciones 14/6/2024 -- 
+
+ALTER TABLE `animal`
+ADD `fecha_castracion` VARCHAR(255);
+
+CREATE TABLE `desparasitaciones` (
+`id` INT AUTO_INCREMENT PRIMARY KEY,
+`id_animal` INT,
+`fecha_desparasitacion` VARCHAR(255),
+`tipo_desparasitante` VARCHAR(255),
+FOREIGN KEY (`id_animal`) REFERENCES animal(`id`));
+
+UPDATE `animal`
+SET `fecha_castracion` = '20-04-2024'
+WHERE id_animal IN (229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252);
+
+UPDATE `animal`
+SET `fecha_castracion` = '12-10-2021'
+WHERE id_animal IN (1, 2, 3, 4, 5, 6, 7, 71, 72, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22);
+
+UPDATE `animal`
+SET `fecha_castracion` = '12-11-2021'
+WHERE id_animal IN (1123, 2123, 2124, 2125, 2126, 2127, 2128, 2129, 2130);
+
+UPDATE `animal`
+SET `fecha_castracion` = '12-16-2022'
+WHERE id_animal IN (2201, 2202, 2203, 2204, 2205, 2206, 2207, 2208, 2209, 2210, 2211, 2212, 2213, 2214, 2215); 
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
